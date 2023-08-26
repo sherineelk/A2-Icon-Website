@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <title>assignment 2</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
+
+        <style>
+            .row{
+                width:720px;
+                margin: 5px auto 5px auto ;
+            }
+            .image-container {
+                display: table-cell;
+                vertical-align: middle;
+                padding:10px;
+            }
+        </style>
+        <body style="background-color: hwb(248 4% 84%);"></body>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="image-container"><img id="img1" src="img/cardiac system rest.png" height="215" width="215" onmousedown= "this.src='img/cardiac system hover.png';"
+                onmouseout= "this.src='img/cardiac system rest.png'"/></div>
+            <div class="image-container"><img id="img2" src="img/lymphatic system rest.png" height="215" width="215" onmousedown= "this.src='img/lymphatic system hover.png';"
+                onmouseout= "this.src='img/lymphatic system rest.png'"/> </div>
+            <div class="image-container"><img id="img3" src="img/reproductive system rest.png" height="215" width="215" onmousedown= "this.src='img/reproductive system hover.png';"
+                onmouseout= "this.src='img/reproductive system rest.png'" /> </div>
+        </div>
+        <div class="row">
+            <div class="image-container"><img id="img4" src="img/muscular system rest.png" height="215" width="215" onmousedown= "this.src='img/muscular system hover.png';"
+                onmouseout= "this.src='img/muscular system rest.png'"/></div>
+            <div class="image-container"><img id="img5" src="img/skeletal system rest.png" height="215" width="215" onmousedown= "this.src='img/skeletal system hover.png';"
+                onmouseout= "this.src='img/skeletal system rest.png'"/> </div>
+            <div class="image-container"><img id="img6" src="img/nervous system rest.png" height="215" width="215" onmousedown= "this.src='img/nervous system hover.png';"
+                onmouseout= "this.src='img/nervous system rest.png'" /> </div>
+        </div>
+        <div class="row">
+            <div class="image-container"><img id="img7" src="img/digestive system rest.png" height="215" width="215" onmousedown= "this.src='img/digestive system hover.png';"
+                onmouseout= "this.src='img/digestive system rest.png'"/></div>
+            <div class="image-container"><img id="img8" src="img/urinary system rest.png" height="215" width="215" onmousedown= "this.src='img/urinary system hover.png';"
+                onmouseout= "this.src='img/urinary system rest.png'"/> </div>
+            <div class="image-container"><img id="img9" src="img/respiratory system rest.png" height="215" width="215" onmousedown= "this.src='img/respiratory system hover.png';"
+                onmouseout= "this.src='img/respiratory system rest.png'" /> </div>
+        </div>
+        <script>
+            var sound1 = new buzz.sound("sound/cardiac2.mp3");
+            var sound2 = new buzz.sound("sound/lymphatic2.mp3");
+            var sound3 = new buzz.sound("sound/reproductive2.mp3");
+            var sound4 = new buzz.sound("sound/muscular3.mp3");
+            var sound5 = new buzz.sound("sound/skeletal3.mp3");
+            var sound6 = new buzz.sound("sound/nervous.mp3");
+            var sound7 = new buzz.sound("sound/digestive2.mp3");
+            var sound8 = new buzz.sound("sound/urinary2.mp3");
+            var sound9 = new buzz.sound("sound/respiratory.mp3");
+     
+            window.onload = function() {
+                document.getElementById('img1').addEventListener('click', function () {sound1.play(); });
+                document.getElementById('img2').addEventListener('click', function () {sound2.play(); });
+                document.getElementById('img3').addEventListener('click', function () {sound3.play(); });
+                document.getElementById('img4').addEventListener('click', function () {sound4.play(); });
+                document.getElementById('img5').addEventListener('click', function () {sound5.play(); });
+                document.getElementById('img6').addEventListener('click', function () {sound6.play(); });
+                document.getElementById('img7').addEventListener('click', function () {sound7.play(); });
+                document.getElementById('img8').addEventListener('click', function () {sound8.play(); });
+                document.getElementById('img9').addEventListener('click', function () {sound9.play(); });
+
+            document.body.onpointerdown = () => {
+    if (buzz.audioCtx.state != `running`) {
+        buzz.audioCtx.resume ()
+    }
+}
+            }
+        </script>   
+    </body>
+    </html>
